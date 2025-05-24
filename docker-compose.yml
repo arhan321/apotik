@@ -1,0 +1,45 @@
+version: '3'
+services:
+  php_apotik:
+    build: ./php
+    image: php:latest
+    container_name: php_apotik
+    hostname: "php"
+    volumes:
+      - ./src:/var/www/html
+      - ./php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    working_dir: /var/www/html
+    depends_on: 
+      - db_apotik
+
+  db_apotik:
+    image: mariadb:10.2
+    container_name: db_apotik
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "34307:3306"
+    volumes:
+      - ./database/data:/var/lib/mysql
+      - ./database/conf.d:/etc/mysql/conf.d:ro
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: 123
+      TZ: Asia/Jakarta
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql  
+    read_only: false
+
+  nginx_apotik:
+    build: ./nginx
+    image: nginx:latest
+    container_name: nginx_apotik
+    hostname: "nginx"
+    ports:
+      - "57:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php_apotik
