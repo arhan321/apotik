@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CheckoutController;
@@ -24,7 +24,7 @@ Livewire::setScriptRoute(function ($handle) {
 //     return view('welcome');
 // });
 // ✅ Halaman publik
-    Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/', [FrontendController::class, 'home'])->name('home');
 // ✅ Autentikasi
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
