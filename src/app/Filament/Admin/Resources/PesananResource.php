@@ -32,6 +32,11 @@ class PesananResource extends Resource
         return static::getModel()::count();
     }
 
+           public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderByDesc('created_at');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

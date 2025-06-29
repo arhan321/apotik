@@ -2,16 +2,16 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\JenisResource\Pages;
-use App\Filament\Admin\Resources\JenisResource\RelationManagers;
-use App\Models\Jenis;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Jenis;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Admin\Resources\JenisResource\Pages;
+use App\Filament\Admin\Resources\JenisResource\RelationManagers;
 
 class JenisResource extends Resource
 {
@@ -25,6 +25,11 @@ class JenisResource extends Resource
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
+    }
+
+       public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderByDesc('created_at');
     }
 
     public static function form(Form $form): Form

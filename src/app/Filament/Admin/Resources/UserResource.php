@@ -2,15 +2,17 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\UserResource\Pages;
-use App\Models\User;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\User;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
+use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+// use Illuminate\Contracts\Database\Query\Builder;
+use App\Filament\Admin\Resources\UserResource\Pages;
 
 class UserResource extends Resource
 {
@@ -27,6 +29,11 @@ class UserResource extends Resource
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
+    }
+
+       public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderByDesc('created_at');
     }
 
     public static function getGloballySearchableAttributes(): array

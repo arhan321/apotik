@@ -2,16 +2,16 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\GolonganResource\Pages;
-use App\Filament\Admin\Resources\GolonganResource\RelationManagers;
-use App\Models\Golongan;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Golongan;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Admin\Resources\GolonganResource\Pages;
+use App\Filament\Admin\Resources\GolonganResource\RelationManagers;
 
 class GolonganResource extends Resource
 {
@@ -25,6 +25,10 @@ class GolonganResource extends Resource
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
+    }
+       public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderByDesc('created_at');
     }
 
     public static function form(Form $form): Form
