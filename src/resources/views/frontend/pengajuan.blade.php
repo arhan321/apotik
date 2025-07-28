@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="alert alert-info small py-2 px-3 mb-3" role="alert">
-                  {{ $pengajuan->status === 'menunggu' ? '⏳ Tunggu ya, pengajuanmu sedang diproses.' : '✅ Pengajuanmu sudah dikonfirmasi.' }}
+                  {{ $pengajuan->status === 'menunggu' ? '⏳ Tunggu ya, pengajuanmu sedang diproses.' : ($pengajuan->status === 'ditolak' ? '❌ Maaf, pengajuanmu ditolak.' : '✅ Pengajuanmu sudah dikonfirmasi.') }}
                 </div>
 
                 <!-- Foto Resep -->
@@ -71,6 +71,16 @@
                     {{ $pengajuan->catatan ?? '-' }}
                   </div>
                 </div>
+
+                <!-- Keterangan (jika ditolak) -->
+                @if($pengajuan->status === 'ditolak')
+                  <div class="mb-3">
+                    <label class="fw-semibold">Keterangan:</label>
+                    <div class="bg-light border rounded p-3">
+                      {{ $pengajuan->keterangan ?? '-' }}
+                    </div>
+                  </div>
+                @endif
 
                 <!-- Estimasi Jarak dan Ongkir -->
                 <div class="mb-3 d-flex justify-content-between">

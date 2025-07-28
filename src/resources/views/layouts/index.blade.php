@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="front/style/style.css" />
+  <link rel="stylesheet" href="{{ asset('front/style/style.css') }}" />
 </head>
 <body>
 
@@ -362,11 +362,11 @@
 {{-- <script defer src="front/js/cart-map-checkout.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="front/js/script.js" defer></script>
-<script src="front/js/cart-map-checkout.js"></script>
-<script src="front/js/kategori.js"></script>
-<script src="front/js/pengajuan.js"></script>
-<script src="front/js/pesanan.js"></script>
+<script src="{{ asset('front/js/script.js') }}" defer></script>
+<script src="{{ asset('front/js/cart-map-checkout.js') }}"></script>
+<script src="{{ asset('front/js/kategori.js') }}"></script>
+<script src="{{ asset('front/js/pengajuan.js') }}"></script>
+<script src="{{ asset('front/js/pesanan.js') }}"></script>
 {{-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> --}}
 </body>
 </html>

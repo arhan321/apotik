@@ -18,6 +18,7 @@ class Pengajuan extends Model
         'jarak',
         'total',
         'status',
+        'keterangan',
         'image',
     ];
 

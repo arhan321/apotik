@@ -70,6 +70,10 @@ class PengajuanResource extends Resource
                     ])
                     ->default('menunggu')
                     ->required(),
+                
+                Forms\Components\Textarea::make('keterangan')
+                    ->columnSpanFull()
+                    ->nullable(),
 
                 FileUpload::make('image')
                     ->image()
@@ -101,6 +105,8 @@ class PengajuanResource extends Resource
                     'success' => 'disetujui',
                     'danger' => 'ditolak',
                 ]),
+                Tables\Columns\TextColumn::make('keterangan')
+                    ->searchable(),
                 ImageColumn::make('image')
                     ->disk('public')
                     ->label('Bukti')
