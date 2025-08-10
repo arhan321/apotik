@@ -63,8 +63,8 @@ class PengajuanResource extends Resource
                     ->numeric(),
                 Select::make('status')
                     ->options([
-                        'menunggu' => 'Menunggu',
-                        'diproses' => 'Diproses',
+                        // 'menunggu' => 'Menunggu',
+                        // 'diproses' => 'Diproses',
                         'disetujui' => 'Disetujui',
                         'ditolak' => 'Ditolak',
                     ])

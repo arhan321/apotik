@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-  <title>APOTIKU</title>
+  <title>Apotik Alfarizi</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <!-- Top Bar -->
   <div class="top-bar bg-white py-2 shadow-sm sticky-top" style="top: 0;" >
     <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand fw-bold text-white fs-4" href="#">Apotiku</a>
+      <a class="navbar-brand fw-bold text-white fs-4" href="#">Apotik Alfarizi</a>
 
       <div>
     <!-- Pesanan-->
@@ -318,7 +318,7 @@
     <div class="row align-items-start">
       <!-- Logo dan navigasi kategori -->
       <div class="col-lg-8 mb-4 mb-lg-0">
-        <h5 class="fw-bold">Apotiku</h5>
+        <h5 class="fw-bold">Apotik Alfarizi</h5>
       <ul class="navbar-nav flex-row flex-wrap mt-2 kategori-navbar">
         <li class="nav-item me-3"><a class="text-decoration-none text-white-50" href="#" data-kategori="Obat Demam">Obat Demam</a></li>
         <li class="nav-item me-3"><a class="text-decoration-none text-white-50" href="#" data-kategori="Obat Flu">Obat Flu</a></li>

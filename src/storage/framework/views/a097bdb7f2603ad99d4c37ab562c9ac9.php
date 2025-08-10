@@ -96,7 +96,7 @@
       </div>
       <div class="col-6 col-md-3">
         <i class="bi bi-headset fs-3 bluee"></i>
-        <h6 class="fw-semibold mt-2 darkk">24/9 Customer Support</h6>
+        <h6 class="fw-semibold mt-2 darkk">24/7 Customer Support</h6>
         <small class="text-muted">Pelayanan yang ramah dan informatif </small>
       </div>
     </div>

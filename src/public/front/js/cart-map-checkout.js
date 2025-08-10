@@ -161,8 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
       leafletMap.remove();
     }
 
-    const tokoLat = -6.246761;
-    const tokoLng = 106.729114;
+    const tokoLat = -6.173366640005029;
+    const tokoLng = 106.56471401711408;
 
     leafletMap = L.map(mapId).setView([tokoLat, tokoLng], 13);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

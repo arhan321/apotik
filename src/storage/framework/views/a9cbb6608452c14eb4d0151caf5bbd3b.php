@@ -27,7 +27,7 @@ foreach ($attributes->all() as $__key => $__value) {
     if (array_key_exists($__key, $__defined_vars)) unset($$__key);
 }
 
-unset($__defined_vars); ?>
+unset($__defined_vars, $__key, $__value); ?>
 <?php if (isset($component)) { $__componentOriginal6330f08526bbb3ce2a0da37da512a11f = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal6330f08526bbb3ce2a0da37da512a11f = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'filament::components.button.index','data' => ['color' => $color,'icon' => $icon,'iconSize' => $iconSize,'labelSrOnly' => $labelSrOnly,'size' => $size,'tooltip' => $tooltip,'class' => $class,'iconPosition' => $iconPosition,'labeledFrom' => $labeledFrom,'outlined' => $outlined]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
