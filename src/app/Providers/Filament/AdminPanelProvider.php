@@ -114,6 +114,13 @@ class AdminPanelProvider extends PanelProvider
                 config('filament-logger.activity_resource'),
             ])
             ->viteTheme('resources/css/filament/admin/theme.css')
+        //     ->auth(function ($user) {
+        //     return $user->hasAnyRole([
+        //         'super_user',
+        //         'User',
+        //         'pemilik_toko',
+        //     ]);
+        // })
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
